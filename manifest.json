@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+  "name": "Fix Jira",
+  "version": "0.1",
+  "background": {
+    "scripts": [ "libs/jquery-3.4.1.min.js", "libs/hot-reload.js"]
+  },
+  "browser_action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": "static/dino.png"
+  },
+  "permissions": [
+    "tabs", "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [ "libs/jquery-3.4.1.min.js", "src/content.js", "popup/popup.js"]
+    }
+  ]
+}
